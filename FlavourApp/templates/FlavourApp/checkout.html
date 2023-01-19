@@ -1,0 +1,27 @@
+{% extends 'FlavourApp/loaders.html' %} {% block title %} Flavoursome-My Cart {% endblock %}
+
+{% block Checkout %} 
+
+<div style="height: 580px;" class="Topdown checkout">
+    <div></div>
+    <div class="Feedback" id="Feedid">
+        <div></div>
+        <section id="contact">
+            <form action="/Flavoursome/checkout/" method="POST">{% csrf_token %}
+                <div class="Feedform regform">
+                    <h1 style="font-size: 2.5rem;" class="feed" id="feedback">Enter Your Address</h1>
+                    <input type="text" name="area" placeholder="H.No. / Building Name / Street">
+                    <input type="text" name="city" placeholder="Enter Your City Name">
+                    <input type="text" name="state" placeholder="Enter Your State Name">
+                    <input type="text" name="phone" placeholder="Enter Your Mobile Number">
+                    <input type="text" name="areaPin" placeholder="Enter Your Area Pin">
+                    <button type="submit" class="btn checkout">Submit Address</button>
+                </div>
+            </form>
+        </section>
+        <div></div>
+    </div>
+    <div></div>
+</div>
+
+{% endblock %}

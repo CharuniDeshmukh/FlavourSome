@@ -1,0 +1,108 @@
+{% extends 'FlavourApp/loaders.html' %} {% block title %} Flavoursome {% endblock %}
+{% block Flavour %}
+{% load static %}
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_one.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Text</div> -->
+    </div>
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_two2.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Two</div> -->
+    </div>
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_three.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_four.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_five.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_six6.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <div class="mySlides fade">
+        <img src="{% static '/FlavourApp/slider/img_seven.jpg' %}" style="width:100%; height: 78vh;">
+        <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center;">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+</div>
+{% for item in food %}
+<div class="items" id="tempItem">
+    <div class="contain">
+        <img src="../food_items/{{ item.img }}" style="width:85%; height: 45vh;">
+        <div class="des">
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.des }}........</p>
+            <div class="add-sub">
+                <p class="addToCart" style="border: 1px solid black;" onclick="addItem('{{item.img}}','{{item.name}}', '{{item.des}}', '{{item.price}}');"> Add to Cart </p>
+            </div>
+            <h3>Price : <span style="color: Red;">{{ item.price }} /-</span></h3>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<script src="{% static '/FlavourApp/JS_FILES/index234.js' %}"></script>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides((slideIndex += n));
+    }
+
+    function currentSlide(n) {
+        showSlides((slideIndex = n));
+    }
+
+    setInterval(() => {
+        showSlides((slideIndex += 1));
+    }, 2500);
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+{% endblock %}

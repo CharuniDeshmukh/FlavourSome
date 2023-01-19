@@ -1,0 +1,23 @@
+{% extends 'FlavourApp/loaders.html' %} {% block title %} Flavoursome-My Cart {% endblock %}
+
+{% block Checkout %} 
+
+<div class="cart-head">
+    <h2 style="font-size: 2.5rem; text-align: center; color: blue; text-shadow: -4px 2px 6px black;">Your Address</h2>
+</div>
+
+<div class="confAdd" style="margin-bottom: 30px;">
+    <center>
+        <div class="addressInfo">
+            <p>{{user.area}}</p>
+            <p>City : {{user.city}}</p>
+            <p>State : {{user.state}}</p>
+            <p>Area Pin : {{user.areaPin}}</p>
+            <p>Mobile Number : {{user.mobile}}</p>
+            <h2 style="background-color: rgb(226, 226, 8); cursor: pointer; margin: 0px 140px;margin-top: 20px; border-radius: 7px;"><a style="text-decoration: none; color: black;" href="/Flavoursome/handler/">Use Address</a></h2>
+            <a style="text-decoration: none;" href="/Flavoursome/updater/"><p style="margin-top: 10px; color: red; font-size: 1rem; text-align: center; text-decoration: none; cursor: pointer;">Update Address</p></a>
+        </div>
+    </center>
+</div>
+
+{% endblock %}

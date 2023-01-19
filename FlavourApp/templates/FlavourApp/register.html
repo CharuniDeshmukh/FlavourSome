@@ -1,0 +1,25 @@
+{% extends 'FlavourApp/loaders.html' %} {% block title %} Register-Flavoursome {% endblock %}
+
+{% block Feedback %}
+
+<div style="height: 580px;" class="Topdown regtopdown">
+    <div></div>
+    <div class="Feedback" id="Feedid">
+        <div></div>
+        <section id="contact">
+            <form action="/Flavoursome/register/" method="POST">{% csrf_token %}
+                <div class="Feedform regform">
+                    <h1 class="feed" id="feedback">Register</h1>
+                    <input type="text" name="name" placeholder="Enter Your Name">
+                    <input type="text" name="email" placeholder="Enter Your E-mail">
+                    <input type="password" name="password" placeholder="Enter Your Password">
+                    <input type="password" name="confirm" placeholder="Confirm Your Password">
+                    <button type="submit" class="btn regtopdown">Register Now</button>
+                </div>
+            </form>
+        </section>
+        <div></div>
+    </div>
+    <div></div>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/FlavourApp/CSS_FILES/index1111.css' %}">
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <nav>
+        <div class="class1" id="id1">
+            <img class="logo" src="{% static '/FlavourApp/slider/img_two2.jpg' %}" alt="" >
+
+            <ul class="nav navmed">
+                <li class="list"><a href="/Flavoursome/">Flavour Some</a></li>
+                <li class="list"><a href="/Flavoursome/orders/">My Orders</a></li>
+                <li class="list"><a id="cartCount" href="/Flavoursome/cart/"></a></li>
+                <li class="list"><a href="/Flavoursome/feedback/">Feedback</a></li>
+                <input class="nav-search" type="search" placeholder="Search Here" >
+                <li class="list"><a href="/Flavoursome/register/">Register</a></li>
+                <li class="list"><a href="/Flavoursome/login/">Login</a></li>
+            </ul>
+        </div>
+        <div class="burger burger-resp">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    {% block Flavour %} {% endblock %}
+    {% block Feedback %} {% endblock %}
+    {% block Cart %} {% endblock %}
+    {% block Checkout %} {% endblock %}
+    {% block Loader %} {% endblock %}
+    
+
+    <footer>
+        <div class="cent">
+            Copyright &copy; www.FlavourSome.com all rights reserved
+        </div>
+        <div class="cent">
+            <i class="fa fa-instagram" style="font-size:23px;color:white;margin:8px;"></i>
+            Follow me on <a style="color: rgb(154, 147, 187);" href="https://Instagram.com/charuni_deshmukh" target="_blank">Instagram</a>
+        </div>
+        <div class="cent">
+            <i class="fa fa-youtube" style="font-size:23px;color:white;margin:8px;"></i>
+            Follow me on <a style="color: rgb(154, 147, 187);" href="https://youtube.com/channel/UCKCKXUXrgOlelJpAEFz59KA" target="_blank">Youtube</a>
+        </div>
+    </footer>
+    <script>
+        var cartCount = document.getElementById('cartCount');
+        var noCart = localStorage.length;
+        noCart = noCart >2 ? noCart - 2 : 0
+        cartCount.innerText = "Cart" + "(" + noCart.toString() + ")";
+    </script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo Bhai 2', cursive;
+}
+
+.class1 {
+  text-align: center;
+  display: flex;
+  max-height: 90px;
+}
+
+.class1 a {
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  margin: 20px 10px;
+  font-size: 1.2rem;
+  font-family: 'Baloo Bhai 2', cursive;
+  text-decoration: none;
+}
+
+.class1 a:hover {
+  color: rgb(146, 226, 209);
+  transition: all 0.5s ease-out;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+nav {
+  background: rgb(41, 40, 40);
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+.nav {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  border-radius: 100%;
+  width: 6%;
+  margin: 6px;
+  margin-left: 10px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.logo:hover {
+  opacity: 0.9;
+  transition: all 0.5s ease-out;
+}
+
+.list {
+  color: white;
+  list-style: none;
+  padding: 8px;
+  margin: 10px;
+}
+
+.nav-search {
+  background: transparent;
+  color: rgb(15, 177, 177);
+  margin: 3px 6px;
+  font-size: 1rem;
+  margin-left: 160px;
+  font-family: 'Baloo Bhai 2', cursive;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.nav-search:hover {
+  border-bottom: 3px solid rgb(146, 226, 209);
+}
+
+.cent {
+  padding-top: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Baloo Bhai 2', cursive;
+  font-size: 1.1rem;
+  background-color: rgb(27, 26, 26);
+  color: white;
+}
+
+.Feedform {
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 25px;
+  background-color: #ffffff;
+}
+
+.feed {
+  text-align: center;
+  font-size: 3rem;
+  /* color: rgb(249, 249, 250); */
+  font-family: 'Baloo Bhai 2', cursive;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  margin-bottom: 10px;
+}
+
+#Feedid {
+  /* background-image: linear-gradient(45deg, red, blue); */
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+}
+
+.Topdown {
+  height: 720px;
+  background-image: linear-gradient(45deg, red, blue);
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+}
+
+.Feedform input {
+  background: transparent;
+  font-size: 1.2rem;
+  margin: 10px 0px;
+  font-family: 'Baloo Bhai 2', cursive;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(100, 94, 94);
+  width: 310px;
+  padding: 5px 20px;
+}
+
+.Feedform input:hover {
+  border-bottom: 2px solid rgb(10, 10, 10);
+}
+
+.Feedform textarea {
+  padding: 5px 20px;
+  height: 100px;
+  width: 310px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(100, 94, 94);
+  font-size: 1.2rem;
+}
+
+.Feedform textarea:hover {
+  border-bottom: 2px solid rgb(10, 10, 10);
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  width: 250px;
+  padding: 5px 20px;
+  background-image: linear-gradient(45deg, red, blue);
+}
+
+.btn:hover{
+  background-image: linear-gradient(45deg, rgb(68, 68, 192), rgb(214, 49, 49));
+}
+
+.regtopdown {
+  background-image: linear-gradient(45deg, rgb(22, 184, 1), rgb(136, 0, 148));
+}
+
+.checkout {
+  background-image: linear-gradient(45deg, rgb(211, 8, 69), rgb(197, 62, 103), rgb(136, 0, 148));
+}
+
+.logtopdown {
+  background-image: linear-gradient(45deg, rgb(110, 3, 62), rgb(1, 184, 175));
+}
+
+.items {
+  margin: 20px 10vw;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.items img {
+  border: 2px solid blue;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: inset 0 0 20px blue;
+}
+
+.contain {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.des h2 {
+  color: blue;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-sub {
+  cursor: pointer;
+  margin: 15px 0px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20%;
+}
+
+.addToCart:hover {
+  background-color: aquamarine;
+}
+
+#pay {
+  width: 100%;
+  display: grid; 
+  grid-template-columns: 10% 25% 36% 19% 10%;
+  margin: 20px 0px;
+}
+
+#pay h2 {
+  background-color: rgb(245, 245, 0);
+  text-align: center;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#payment:hover {
+  background-color: rgb(43, 235, 235);
+}
+
+.addressInfo {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 280px;
+  width: 500px;
+  padding: 20px;
+  box-shadow: inset 0 0 20px blue;
+}
+
+.addressInfo p {
+  text-align: left;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+.handler {
+  border: 2px solid black;
+  background-color: black;
+}
+
+
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  margin: 0px 10vw;
+  position: relative;
+  margin-top: 15px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-bottom: 10px;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 100%) {
+  .prev, .next, .text {
+    font-size: 11px
+  }
+}

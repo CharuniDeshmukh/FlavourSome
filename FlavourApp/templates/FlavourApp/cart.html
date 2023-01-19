@@ -1,0 +1,70 @@
+{% extends 'FlavourApp/loaders.html' %} {% block title %} Flavoursome-My Cart {% endblock %}
+
+{% block Cart %}
+{% load static %}`
+<div class="cart-head">
+    <h2 style="font-size: 2.5rem; text-align: center; color: blue; text-shadow: -4px 2px 6px black;">Your Cart</h2>
+</div>
+
+<dev id="emptyCart" style="display: none;">
+    <center><img style="width: 80vw; height: 80vh;" src="https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt=""></center>
+    <h2 style="font-size: 2.5rem; text-align: center; color: blue; text-shadow: -4px 2px 6px black;">Your Cart is Empty</h2>
+</dev>
+<div id="cart">
+
+</div>
+
+<div id="pay" style="display: grid;">
+    <div></div>
+    <h2 id="cartValue"></h2>
+    <div></div>
+    <h2 id="payment" style="cursor: pointer;"><a style="text-decoration: none; color: black;" href="/Flavoursome/checkout/">Procced to Payout</a></h2>
+    <div></div>
+</div>
+
+<script>
+    let text = ``;
+    var cartItems = document.getElementById('cart');
+    for (i = 0; i < localStorage.length; i++) {
+        const arr = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        if (arr.length == undefined || !arr) { continue; }
+        text += `<div class="items" id="tempItem">
+        <div class="contain">
+            <img src="../../food_items/${arr[0]}" style="width:85%; height: 45vh;">
+            <div class="des">
+                <h2>${arr[1]}</h2>
+                <p>${arr[2]}........</p>
+                <div class="add-sub" style="grid-template-columns: 5% 15% 5%;">
+                    <button class="subitem" onclick="subItem('${arr[0]}','${arr[1]}', '${arr[2]}', '${arr[3]}')"> - </button>
+                    <p style="border: 1px solid black;" > ${arr[4]} </p>
+                    <button class="additem" onclick="addItem('${arr[0]}','${arr[1]}', '${arr[2]}', '${arr[3]}')"> + </button>
+                </div>
+                <h3>Price : <span style="color: Red;">${arr[3]} /-</span></h3>
+            </div>
+        </div>
+    </div>`;
+    }
+    cartItems.innerHTML = text;
+
+    //cartVAlue
+    let totalPrice = document.getElementById('cartValue');
+    if (!localStorage.getItem('cartValue'))
+    {
+    totalPrice.innerText = `Total Cart value : 0.00`;
+    }
+    else
+    {
+        var price = localStorage.getItem('cartValue');
+        totalPrice.innerHTML = `Total Cart value : ${price}.00`;
+    }
+
+    if (localStorage.length < 3)
+    {
+        var emptyCart = document.getElementById('emptyCart');
+        var pay = document.getElementById('pay');
+        emptyCart.style.display = 'block';
+        pay.style.display = 'none';
+    }
+</script>
+<script src="{% static '/FlavourApp/JS_FILES/index234.js' %}"></script>
+{% endblock %}
